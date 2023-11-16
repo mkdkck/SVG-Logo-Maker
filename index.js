@@ -5,10 +5,15 @@ const { writeFile } = require('fs').promises;
 const questions = () => {
     return inquirer.prompt([
       {
-        type: 'maxlength-input',
+        type: 'input',
         name: 'text',
         message: 'Please enter text for the SVG Logo (no more than 3 characters)',
-        maxLength: 3
+        validate: function(input){
+          if (input.length <= 3) {
+             return true;
+          } else{
+            return 'Input cannot exceed 3 characters'
+        }}
       },
       {
         type: 'input',
