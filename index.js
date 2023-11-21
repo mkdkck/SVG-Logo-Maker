@@ -1,5 +1,6 @@
 const inquirer = require ('inquirer');
 const { writeFile } = require('fs').promises;
+const { generateSVG } = require ('./lib/generateSVG.js')
 
 // inquirer sections of questions
 const questions = () => {
@@ -27,7 +28,7 @@ const questions = () => {
         choices: ['Circle',
           'Square',
           'Triangle',
-          'Rectengle',
+          'Rectangle',
           'Hexagon']
       },
       {
