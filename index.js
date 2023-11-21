@@ -6,6 +6,21 @@ const { generateSVG } = require ('./lib/generateSVG.js')
 const questions = () => {
     return inquirer.prompt([
       {
+        type: 'list',
+        name: 'shape',
+        message: 'What shape do you want for your Logo:',
+        choices: ['Circle',
+          'Square',
+          'Triangle',
+          'Rectangle',
+          'Hexagon']
+      },
+      {
+        type: 'input',
+        name: 'shapeColor',
+        message: 'Please give a color to your shape (color name or Hex number):',
+      },
+      {
         type: 'input',
         name: 'text',
         message: 'Please enter text for the SVG Logo (no more than 3 characters)',
@@ -20,21 +35,6 @@ const questions = () => {
         type: 'input',
         name: 'textColor',
         message: 'Please give the text a color (color name or Hex number):',
-      },
-      {
-        type: 'list',
-        name: 'shapes',
-        message: 'What shape do you want for your Logo:',
-        choices: ['Circle',
-          'Square',
-          'Triangle',
-          'Rectangle',
-          'Hexagon']
-      },
-      {
-        type: 'input',
-        name: 'shapeColor',
-        message: 'Please give a color to your shape (color name or Hex number):',
       },
   ])
 };
