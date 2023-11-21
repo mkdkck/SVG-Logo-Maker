@@ -27,7 +27,7 @@ const questions = () => {
         choices: ['Circle',
           'Square',
           'Triangle',
-          'Rectengle',
+          'Rectangle',
           'Hexagon']
       },
       {
