@@ -1,6 +1,7 @@
 const inquirer = require ('inquirer');
 const { writeFile } = require('fs').promises;
 const { generateSVG } = require ('./lib/generateSVG.js')
+const LogoElements = require ('./lib/logoElements.js')
 
 // inquirer sections of questions
 const questions = () => {
@@ -42,9 +43,9 @@ const questions = () => {
 
 // function to write
 questions()
-    .then((data) =>
-        writeFile('logo.svg', generateSVG(data)))
-    .then(() => console.log('Successfully generated your SVG file'))
-    .catch((err) => console.error(err));
+  .then((data) =>
+    writeFile('logo.svg', generateSVG(data)))
+  .then(() => console.log('Successfully generated your SVG file'))
+  .catch((err) => console.error(err));
 
 
